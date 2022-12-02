@@ -17,10 +17,15 @@
 # wb.save("sample.xlsx")
 
 # Имя;Фамилмя;user_id;Пол;Город;Год Рождения;group_id
+a = "https://vk.com/ligioligio"
 
+if 'vk.' in a:
+    print(1)
+else:
+    print(2)
 
-import sys
+# import sys
 
-if __name__ == "__main__":
-    for group_URL in sys.argv:
-        print (group_URL)
+# if __name__ == "__main__":
+#     for group_URL in sys.argv:
+#         print (group_URL)

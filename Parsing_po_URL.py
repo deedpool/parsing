@@ -18,7 +18,8 @@ import argparse
 # -------------------------------------------------
 
 # WORK VK
-session = vk_api.VkApi(token="vk1.a.ay4hxPxMh-vHKRe_6TOBFo3kU-d4ywrIsFyJl_Z3C0kPJfg-OlUuNt8a6VFEMX-npPY6tFjS-aM0hRcBrAre4barY2zh5PwhZTCz6y-3-7jo9UVMCeMCob6-OIJR3m2HNK6zDK6W3wetE3u890KrKFdbmFwaDAqRLRjJjpIdlTzfpZVAG7asZSPk9etiWNnm")
+# session = vk_api.VkApi(token="vk1.a.ay4hxPxMh-vHKRe_6TOBFo3kU-d4ywrIsFyJl_Z3C0kPJfg-OlUuNt8a6VFEMX-npPY6tFjS-aM0hRcBrAre4barY2zh5PwhZTCz6y-3-7jo9UVMCeMCob6-OIJR3m2HNK6zDK6W3wetE3u890KrKFdbmFwaDAqRLRjJjpIdlTzfpZVAG7asZSPk9etiWNnm")
+session = vk_api.VkApi(token="vk1.a.qS-6u3AvUyMKH_q5038CbWuRHKf_mxa2Cpz9tvWq2OgECseZBq0XW92hL27VkwHYdPf2vAFZAHl5PsycOdfY8TLVuHB6XwSEVThx8oUUQE8woksiiU0qk7cQmQxdGk2XB483-bnv2h8TbDlHuBzDBSuI4a5rKEVjeHCuJWWQ_hkERk1cKUZtop6wsljoP23kqFs0lINfRz1BekLO_U87eQ")
 vk = session.get_api()
 
 
@@ -110,7 +111,10 @@ if __name__ == '__main__':
     print(namespace.URL)
     # stolb_2 = group_URL
     for group_URL in namespace.URL:
-        goko = group_URL.split("m/")[1]
+        if "vk.com" in group_URL:
+            goko = group_URL.split("m/")[1]
+        else:
+            goko = group_URL
         print(goko)
 
         if re.findall(r"club\d+", goko):

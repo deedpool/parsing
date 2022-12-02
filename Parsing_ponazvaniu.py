@@ -8,9 +8,9 @@ import re
 
 # Имя;Фамилмя;Пол;Город;Год Рождения
 # -------------------------------------------------
-book_tess = openpyxl.open("23.xlsx")
+book_tess = openpyxl.open("Сообщества.xlsx")
 sheets = book_tess.sheetnames
-data_excel = book_tess[sheets[1]] #Тут можно выбрать лист
+data_excel = book_tess[sheets[0]] #Тут можно выбрать лист
 # print(data_excel[2][0].value) #Тут можно выбрать столбец и строку
 
 # print(sheet_1[2][0].value)
@@ -26,10 +26,10 @@ data_excel = book_tess[sheets[1]] #Тут можно выбрать лист
 
 # WORK VK
 
-session = vk_api.VkApi(token="vk1.a.ay4hxPxMh-vHKRe_6TOBFo3kU-d4ywrIsFyJl_Z3C0kPJfg-OlUuNt8a6VFEMX-npPY6tFjS-aM0hRcBrAre4barY2zh5PwhZTCz6y-3-7jo9UVMCeMCob6-OIJR3m2HNK6zDK6W3wetE3u890KrKFdbmFwaDAqRLRjJjpIdlTzfpZVAG7asZSPk9etiWNnm")
+# session = vk_api.VkApi(token="vk1.a.ay4hxPxMh-vHKRe_6TOBFo3kU-d4ywrIsFyJl_Z3C0kPJfg-OlUuNt8a6VFEMX-npPY6tFjS-aM0hRcBrAre4barY2zh5PwhZTCz6y-3-7jo9UVMCeMCob6-OIJR3m2HNK6zDK6W3wetE3u890KrKFdbmFwaDAqRLRjJjpIdlTzfpZVAG7asZSPk9etiWNnm")
+session = vk_api.VkApi(token="vk1.a.qS-6u3AvUyMKH_q5038CbWuRHKf_mxa2Cpz9tvWq2OgECseZBq0XW92hL27VkwHYdPf2vAFZAHl5PsycOdfY8TLVuHB6XwSEVThx8oUUQE8woksiiU0qk7cQmQxdGk2XB483-bnv2h8TbDlHuBzDBSuI4a5rKEVjeHCuJWWQ_hkERk1cKUZtop6wsljoP23kqFs0lINfRz1BekLO_U87eQ")
+# session = vk_api.VkApi(token="vk1.a.D9hMDG3bCkp5lP6d28EGpcWuXqUOX12Y7DzWfRGkVyi_IyUrrpBLZaUghuiyBJcmjOlH6H9zn7Kc59DFIm5ASzYfoM6x2ygHORDJCaOF3soOU2A3h6xTyDdo2Nl--X1Dqn-XOkNBp1Lh9IlyW41RwPcfvDTusTKJuckr_KHCR7Bvbij0-mbI3OYDK70juI93Z0mIYYD0nXg7zhiizCUtaw")
 vk = session.get_api()
-
-
 # def get_user_status(group_id):
 #     status = session.method("status.get", {"group_id": group_id})
 #     print(status["text"])
@@ -91,7 +91,7 @@ def save_group_members(users):
 
 
 for urlrs in range(2,data_excel.max_row):
-    goko = data_excel[urlrs][0].value
+    goko = data_excel[urlrs][3].value #выбор столбца
     print(goko)
     if re.findall(r"club\d+", goko):
         nums = re.findall(r'\d+', goko)
