@@ -13,7 +13,7 @@ stroka = 0 # выбор с какой строки начнет
 
 
 # WORK VK
-session = vk_api.VkApi(token="vk1.a.qS-6u3AvUyMKH_q5038CbWuRHKf_mxa2Cpz9tvWq2OgECseZBq0XW92hL27VkwHYdPf2vAFZAHl5PsycOdfY8TLVuHB6XwSEVThx8oUUQE8woksiiU0qk7cQmQxdGk2XB483-bnv2h8TbDlHuBzDBSuI4a5rKEVjeHCuJWWQ_hkERk1cKUZtop6wsljoP23kqFs0lINfRz1BekLO_U87eQ")
+session = vk_api.VkApi(token="")#Ввести токен вк
 vk = session.get_api()
 
 def pars_memb(group_id):
