@@ -1,5 +1,3 @@
-/Data_Slasnikov
-group_1.csv
-group_2.csv
-group_3.csv
+*.csv
+*.xlsx
 .vscode
